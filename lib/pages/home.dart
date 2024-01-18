@@ -115,283 +115,6 @@ class _MyHomePageState extends State<MyHomePage>
         },
       ),
     );
-
-    //     Scaffold(
-    //   backgroundColor: HexColor("AFEE85"),
-    //   body: ResponsiveBuilder(
-    //     builder: (context, constraints) {
-    //       return ListView(
-    //         padding: const EdgeInsets.only(top: 150),
-    //         children: [
-    //           Padding(
-    //             padding:
-    //                 const EdgeInsets.symmetric(horizontal: 100.0, vertical: 50),
-    //             child: Column(
-    //               children: [
-    //                 Hero(
-    //                   tag: 'animatedContainer',
-    //                   child: Visibility(
-    //                     visible: !isFlipped,
-    //                     child: AnimatedBuilder(
-    //                       animation: controller,
-    //                       builder: (context, child) {
-    //                         double angle = math.pi * controller.value * 2;
-    //                         return Transform(
-    //                           transform: Matrix4.identity()
-    //                             ..setEntry(3, 2, 0.00001)
-    //                             ..rotateY(angle),
-    //                           alignment: Alignment.center,
-    //                           child: Container(
-    //                             decoration: BoxDecoration(
-    //                               gradient: LinearGradient(
-    //                                 colors: [
-    //                                   Colors.white,
-    //                                   Colors.green.shade400.withOpacity(0.2),
-    //                                   Colors.white,
-    //                                 ],
-    //                                 begin: Alignment.topLeft,
-    //                                 end: Alignment.bottomRight,
-    //                               ),
-    //                               borderRadius: BorderRadius.circular(30),
-    //                             ),
-    //                             child: Padding(
-    //                               padding: const EdgeInsets.symmetric(
-    //                                 horizontal: 40.0,
-    //                                 vertical: 20,
-    //                               ),
-    //                               child: Column(
-    //                                 crossAxisAlignment:
-    //                                     CrossAxisAlignment.start,
-    //                                 children: [
-    //                                   Row(
-    //                                     mainAxisAlignment:
-    //                                         MainAxisAlignment.spaceEvenly,
-    //                                     children: [
-    //                                       Padding(
-    //                                         padding: const EdgeInsets.symmetric(
-    //                                             horizontal: 10.0),
-    //                                         child: Text(
-    //                                           "Abdulla Nasar",
-    //                                           style: TextStyle(
-    //                                             fontSize: 50,
-    //                                             fontWeight: FontWeight.bold,
-    //                                             fontFamily: "Praise",
-    //                                             color: textColor,
-    //                                           ),
-    //                                         ),
-    //                                       ),
-    //                                       Expanded(
-    //                                         child: Row(
-    //                                           mainAxisAlignment:
-    //                                               MainAxisAlignment.end,
-    //                                           children: List.generate(
-    //                                             socialMedia.length,
-    //                                             (index) => Padding(
-    //                                               padding: const EdgeInsets
-    //                                                   .symmetric(
-    //                                                   horizontal: 15.0),
-    //                                               child: HoverZoomWidget(
-    //                                                 imagePath:
-    //                                                     socialMedia[index],
-    //                                                 onTap: () {
-    //                                                   index == 0
-    //                                                       ? launchInstagram()
-    //                                                       : index == 1
-    //                                                           ? launchLinkedIn()
-    //                                                           : launchGitHub();
-    //                                                 },
-    //                                               ),
-    //                                             ),
-    //                                           ),
-    //                                         ),
-    //                                       ),
-    //                                     ],
-    //                                   ),
-    //                                   SizedBox(
-    //                                     height:
-    //                                         MediaQuery.of(context).size.height /
-    //                                             9,
-    //                                   ),
-    //                                   Row(
-    //                                     mainAxisAlignment:
-    //                                         MainAxisAlignment.spaceBetween,
-    //                                     crossAxisAlignment:
-    //                                         CrossAxisAlignment.start,
-    //                                     children: [
-    //                                       Column(
-    //                                         crossAxisAlignment:
-    //                                             CrossAxisAlignment.start,
-    //                                         children: [
-    //                                           AnimatedTextKit(
-    //                                             animatedTexts:
-    //                                                 messages.map((message) {
-    //                                               return TypewriterAnimatedText(
-    //                                                 message,
-    //                                                 textStyle: const TextStyle(
-    //                                                   fontSize: 32.0,
-    //                                                   fontWeight:
-    //                                                       FontWeight.bold,
-    //                                                 ),
-    //                                                 speed: const Duration(
-    //                                                     milliseconds: 200),
-    //                                               );
-    //                                             }).toList(),
-    //                                             totalRepeatCount: 4,
-    //                                             pause: const Duration(
-    //                                                 milliseconds: 200),
-    //                                             displayFullTextOnTap: true,
-    //                                             stopPauseOnTap: true,
-    //                                           ),
-    //                                           text(
-    //                                             giveText: "Flutter Developer",
-    //                                             fontsize: 25,
-    //                                             fontweight: FontWeight.bold,
-    //                                             textColor: Colors.black,
-    //                                           ),
-    //                                           SizedBox(
-    //                                             height: MediaQuery.of(context)
-    //                                                     .size
-    //                                                     .height /
-    //                                                 20,
-    //                                           ),
-    //                                           text(
-    //                                             giveText:
-    //                                                 """I'm an experienced Flutter developer with a year of expertise.
-    //     I've excelled in diverse projects, including e-commerce,
-    //     job portals,and teaching apps.Proficient in Flutter,
-    //     Dart, UI/UX design, and API integration, I ensure
-    //     efficient project management with expertise in
-    //     state management using GetX and Provider. """,
-    //                                             maxLine: 6,
-    //                                             fontsize: 20,
-    //                                             fontweight: FontWeight.w400,
-    //                                             textColor: Colors.black,
-    //                                           ),
-    //                                           SizedBox(
-    //                                             height: MediaQuery.of(context)
-    //                                                     .size
-    //                                                     .height /
-    //                                                 50,
-    //                                           ),
-    //                                           Row(
-    //                                             children: [
-    //                                               RawMaterialButton(
-    //                                                 onPressed: () {
-    //                                                   downloadPdf();
-    //                                                 },
-    //                                                 child: Container(
-    //                                                   decoration: BoxDecoration(
-    //                                                     color: Colors.black,
-    //                                                     borderRadius:
-    //                                                         BorderRadius
-    //                                                             .circular(30),
-    //                                                   ),
-    //                                                   child: Padding(
-    //                                                     padding:
-    //                                                         const EdgeInsets
-    //                                                             .all(10.0),
-    //                                                     child: text(
-    //                                                       giveText:
-    //                                                           "Download CV",
-    //                                                       fontsize: 20,
-    //                                                       fontweight:
-    //                                                           FontWeight.w400,
-    //                                                       textColor:
-    //                                                           Colors.white,
-    //                                                     ),
-    //                                                   ),
-    //                                                 ),
-    //                                               ),
-    //                                               const SizedBox(
-    //                                                 width: 50,
-    //                                               ),
-    //                                               RawMaterialButton(
-    //                                                 hoverElevation: 20,
-    //                                                 onPressed: () {
-    //                                                   flipContainer();
-    //                                                 },
-    //                                                 child: MouseRegion(
-    //                                                   onEnter: (_) {
-    //                                                     setState(() {
-    //                                                       isHovered = true;
-    //                                                     });
-    //                                                   },
-    //                                                   onExit: (_) {
-    //                                                     setState(() {
-    //                                                       isHovered = false;
-    //                                                     });
-    //                                                   },
-    //                                                   child: Container(
-    //                                                     decoration:
-    //                                                         BoxDecoration(
-    //                                                       border: Border.all(
-    //                                                           color:
-    //                                                               Colors.black,
-    //                                                           width: 2),
-    //                                                       color: isHovered
-    //                                                           ? HexColor(
-    //                                                               "AFEE85")
-    //                                                           : Colors.white,
-    //                                                       borderRadius:
-    //                                                           BorderRadius
-    //                                                               .circular(30),
-    //                                                     ),
-    //                                                     child: Padding(
-    //                                                       padding:
-    //                                                           const EdgeInsets
-    //                                                               .all(10.0),
-    //                                                       child: text(
-    //                                                         giveText:
-    //                                                             "Know more",
-    //                                                         fontsize: 20,
-    //                                                         fontweight:
-    //                                                             FontWeight.w400,
-    //                                                         textColor:
-    //                                                             Colors.black,
-    //                                                       ),
-    //                                                     ),
-    //                                                   ),
-    //                                                 ),
-    //                                               ),
-    //                                             ],
-    //                                           ),
-    //                                         ],
-    //                                       ),
-    //                                       Image.asset(
-    //                                         "assets/image/photo.png",
-    //                                         // fit: BoxFit.cover,
-    //                                       )
-    //                                     ],
-    //                                   ),
-    //                                 ],
-    //                               ),
-    //                             ),
-    //                           ),
-    //                         );
-    //                       },
-    //                     ),
-    //                   ),
-    //                 ),
-    //                 // Back Container (Different content)
-    // BackContainer(
-    //   isFlipped: isFlipped,
-    //   controller: controller,
-    //   textColor: textColor,
-    //   launchInstagram: launchInstagram,
-    //   launchLinkedIn: launchLinkedIn,
-    //   launchGitHub: launchGitHub,
-    //   listItemWidgets: myItems,
-    //   downloadPdf: downloadPdf,
-    //   flipContainer: flipContainer,
-    // )
-    //               ],
-    //             ),
-    //           ),
-    //         ],
-    //       );
-    //     },
-    //   ),
-    // );
   }
 
   Widget buildDesktopLayout() {
@@ -405,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage>
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -510,11 +233,23 @@ class _MyHomePageState extends State<MyHomePage>
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 25,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 25.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -660,7 +395,7 @@ state management using GetX and Provider. """,
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -765,11 +500,23 @@ state management using GetX and Provider. """,
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 25,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 25.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -919,7 +666,7 @@ state management using GetX and Provider. """,
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -1024,11 +771,23 @@ state management using GetX and Provider. """,
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 25,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 25.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -1174,7 +933,7 @@ state management using GetX and Provider. """,
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -1279,11 +1038,23 @@ state management using GetX and Provider. """,
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 20,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -1434,7 +1205,7 @@ state management using GetX and Provider. """,
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -1539,11 +1310,23 @@ state management using GetX and Provider. """,
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 16,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 16.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -1698,7 +1481,7 @@ state management usingGetX and Provider. """,
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -1803,11 +1586,23 @@ state management usingGetX and Provider. """,
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 14,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -1963,7 +1758,7 @@ GetX and Provider. """,
               Hero(
                 tag: 'animatedContainer',
                 child: Visibility(
-                  visible: isFlipped,
+                  visible: !isFlipped,
                   child: AnimatedBuilder(
                     animation: controller,
                     builder: (context, child) {
@@ -2068,11 +1863,23 @@ GetX and Provider. """,
                                           displayFullTextOnTap: true,
                                           stopPauseOnTap: true,
                                         ),
-                                        text(
-                                          giveText: "Flutter Developer",
-                                          fontsize: 12,
-                                          fontweight: FontWeight.bold,
-                                          textColor: Colors.black,
+                                        AnimatedTextKit(
+                                          animatedTexts: work.map((message) {
+                                            return TypewriterAnimatedText(
+                                              message,
+                                              textStyle: const TextStyle(
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              speed: const Duration(
+                                                  milliseconds: 200),
+                                            );
+                                          }).toList(),
+                                          totalRepeatCount: 4,
+                                          pause:
+                                              const Duration(milliseconds: 200),
+                                          displayFullTextOnTap: true,
+                                          stopPauseOnTap: true,
                                         ),
                                         SizedBox(
                                           height: MediaQuery.of(context)
@@ -2408,7 +2215,7 @@ class _BackContainerState extends State<BackContainer> {
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: !widget.isFlipped,
+      visible: widget.isFlipped,
       child: AnimatedBuilder(
         animation: widget.controller,
         builder: (context, child) {
@@ -2626,7 +2433,7 @@ class _BackContainerState extends State<BackContainer> {
                               ),
                             ),
                             const SizedBox(
-                              height: 80,
+                              height: 150,
                               width: 240,
                               child: Padding(
                                 padding: EdgeInsets.all(5.0),
@@ -3453,8 +3260,8 @@ class _BackContainerState extends State<BackContainer> {
                                             ),
                                           ),
                                           const SizedBox(
-                                            height: 250,
-                                            width: 140,
+                                            height: 380,
+                                            width: 180,
                                             child: AnimatedQuoteList(),
                                           ),
                                         ],
@@ -3736,7 +3543,7 @@ class _BackContainerState extends State<BackContainer> {
                                             ),
                                           ),
                                           const SizedBox(
-                                            height: 250,
+                                            height: 600,
                                             width: 140,
                                             child: AnimatedQuoteList(),
                                           ),

@@ -64,3 +64,10 @@ final List<String> messages = [
   'Bonjour, Je suis Abdulla Nasar',
   'Hola, Soy Abdulla Nasar',
 ];
+final List<String> work = [
+  "Flutter Developer",
+  'UI/UX',
+  'Freelancer',
+  'Article Writer',
+  'Content Creator',
+];
