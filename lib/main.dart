@@ -28,9 +28,10 @@ class MyApp extends StatelessWidget {
 }
 
 List<String> socialMedia = [
-  "assets/image/instagram.svg",
-  "assets/image/linkedin.svg",
-  "assets/image/GitHub.svg",
+  "assets/image/icons8-instagram.svg",
+  "assets/image/icons8-linkedin.svg",
+  "assets/image/icons8-github.svg",
+  "assets/image/envelope-regular.svg",
 ];
 List<String> familiar1 = [
   "assets/image/icons8-flutter-48.png",

@@ -8,6 +8,7 @@ import 'package:abdulla_nasar_portfolio/utils/hex_color.dart';
 import 'package:abdulla_nasar_portfolio/utils/quotes.dart';
 import 'package:abdulla_nasar_portfolio/utils/reusable_widget.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:url_launcher/url_launcher.dart';
@@ -192,7 +193,9 @@ class _MyHomePageState extends State<MyHomePage>
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -370,6 +373,7 @@ state management using GetX and Provider. """,
                 isFlipped: isFlipped,
                 controller: controller,
                 textColor: textColor,
+                launchemail: emaillaunch,
                 launchInstagram: launchInstagram,
                 launchLinkedIn: launchLinkedIn,
                 launchGitHub: launchGitHub,
@@ -459,7 +463,9 @@ state management using GetX and Provider. """,
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -641,6 +647,7 @@ state management using GetX and Provider. """,
                 isFlipped: isFlipped,
                 controller: controller,
                 textColor: textColor,
+                launchemail: emaillaunch,
                 launchInstagram: launchInstagram,
                 launchLinkedIn: launchLinkedIn,
                 launchGitHub: launchGitHub,
@@ -730,7 +737,9 @@ state management using GetX and Provider. """,
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -905,6 +914,7 @@ state management using GetX and Provider. """,
               ),
               // Back Container (Different content)
               BackContainer(
+                launchemail: emaillaunch,
                 isFlipped: isFlipped,
                 controller: controller,
                 textColor: textColor,
@@ -997,7 +1007,9 @@ state management using GetX and Provider. """,
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -1178,6 +1190,7 @@ state management using GetX and Provider. """,
               // Back Container (Different content)
               BackContainer(
                 isFlipped: isFlipped,
+                launchemail: emaillaunch,
                 controller: controller,
                 textColor: textColor,
                 launchInstagram: launchInstagram,
@@ -1269,7 +1282,9 @@ state management using GetX and Provider. """,
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -1454,6 +1469,7 @@ state management usingGetX and Provider. """,
               // Back Container (Different content)
               BackContainer(
                 isFlipped: isFlipped,
+                launchemail: emaillaunch,
                 controller: controller,
                 textColor: textColor,
                 launchInstagram: launchInstagram,
@@ -1545,7 +1561,9 @@ state management usingGetX and Provider. """,
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -1730,6 +1748,7 @@ GetX and Provider. """,
               ),
               // Back Container (Different content)
               BackContainer(
+                launchemail: emaillaunch,
                 isFlipped: isFlipped,
                 controller: controller,
                 textColor: textColor,
@@ -1822,7 +1841,9 @@ GetX and Provider. """,
                                                     ? launchInstagram()
                                                     : index == 1
                                                         ? launchLinkedIn()
-                                                        : launchGitHub();
+                                                        : index == 2
+                                                            ? launchGitHub()
+                                                            : emaillaunch();
                                               },
                                             ),
                                           ),
@@ -2008,6 +2029,7 @@ using GetX and Provider. """,
               ),
               // Back Container (Different content)
               BackContainer(
+                launchemail: emaillaunch,
                 isFlipped: isFlipped,
                 controller: controller,
                 textColor: textColor,
@@ -2033,6 +2055,23 @@ void downloadPdf() async {
     await launchUrl(Uri.parse(assetUrl));
   } else {
     print('Could not launch $assetUrl');
+  }
+}
+
+void emaillaunch() async {
+  String email = Uri.encodeComponent("test@aeologic.com");
+  String subject = Uri.encodeComponent("Hello Flutter Dev's");
+  String body = Uri.encodeComponent("Hi! I'm Flutter Developer.");
+  if (kDebugMode) {
+    print(subject);
+    print(email);
+    print(body);
+  }
+  var url = Uri.parse("mailto:$email?subject=$subject&body=$body");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
 
@@ -2169,6 +2208,7 @@ class BackContainer extends StatefulWidget {
     required this.downloadPdf,
     required this.flipContainer,
     required this.listItemWidgets,
+    required this.launchemail,
   });
   final bool isFlipped;
   final AnimationController controller;
@@ -2176,6 +2216,7 @@ class BackContainer extends StatefulWidget {
   final Function launchInstagram;
   final Function launchLinkedIn;
   final Function launchGitHub;
+  final Function launchemail;
   final Function downloadPdf;
   final Function flipContainer;
   bool isHovered = false;
@@ -2300,7 +2341,9 @@ class _BackContainerState extends State<BackContainer> {
                                   ? widget.launchInstagram()
                                   : index == 1
                                       ? widget.launchLinkedIn()
-                                      : widget.launchGitHub();
+                                      : index == 2
+                                          ? widget.launchGitHub()
+                                          : widget.launchemail();
                             },
                           ),
                         );
@@ -2570,7 +2613,9 @@ class _BackContainerState extends State<BackContainer> {
                                   ? widget.launchInstagram()
                                   : index == 1
                                       ? widget.launchLinkedIn()
-                                      : widget.launchGitHub();
+                                      : index == 2
+                                          ? widget.launchGitHub()
+                                          : widget.launchemail();
                             },
                           ),
                         );
@@ -2840,7 +2885,9 @@ class _BackContainerState extends State<BackContainer> {
                                   ? widget.launchInstagram()
                                   : index == 1
                                       ? widget.launchLinkedIn()
-                                      : widget.launchGitHub();
+                                      : index == 2
+                                          ? widget.launchGitHub()
+                                          : widget.launchemail();
                             },
                           ),
                         );
@@ -3118,7 +3165,9 @@ class _BackContainerState extends State<BackContainer> {
                                   ? widget.launchInstagram()
                                   : index == 1
                                       ? widget.launchLinkedIn()
-                                      : widget.launchGitHub();
+                                      : index == 2
+                                          ? widget.launchGitHub()
+                                          : widget.launchemail();
                             },
                           ),
                         );
@@ -3401,7 +3450,9 @@ class _BackContainerState extends State<BackContainer> {
                                   ? widget.launchInstagram()
                                   : index == 1
                                       ? widget.launchLinkedIn()
-                                      : widget.launchGitHub();
+                                      : index == 2
+                                          ? widget.launchGitHub()
+                                          : widget.launchemail();
                             },
                           ),
                         );
@@ -3686,7 +3737,9 @@ class _BackContainerState extends State<BackContainer> {
                                       ? widget.launchInstagram()
                                       : index == 1
                                           ? widget.launchLinkedIn()
-                                          : widget.launchGitHub();
+                                          : index == 2
+                                              ? widget.launchGitHub()
+                                              : widget.launchemail();
                                 },
                               ),
                             );
